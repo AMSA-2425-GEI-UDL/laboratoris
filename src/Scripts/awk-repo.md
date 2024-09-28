@@ -6,7 +6,9 @@ Aquesta secció conté els exercicis realitzats pels estudiants de l'assignatura
 5 exercicis
 ### Bàsics
 #Filtra per Fire & Water.
+```awk
 grep -E 'Fire|Water' pokemon.csv | cut -d, -f2,3,10
+```
 ### Intermedis
 # Busca els Pokémon de tipus "Dragon" i troba el que té el màxim "Sp. Atk", mostrant el nom i el valor.
 awk -F, '$3 == "Dragon" {if($9 > max_special_atk) {max_special_atk = $9; dragon_pokemon = $2}} END {print "Dragon Pokemon with highest Sp. Atk:", dragon_pokemon, "with", max_special_atk, "Sp. Atk"}' pokemon.csv
