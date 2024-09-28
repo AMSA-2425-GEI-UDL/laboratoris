@@ -8,13 +8,13 @@ Aquesta secció conté els exercicis realitzats pels estudiants de l'assignatura
 #Filtra per Fire & Water.
 grep -E 'Fire|Water' pokemon.csv | cut -d, -f2,3,10
 ### Intermedis
-#Busca els Pokémon de tipus "Dragon" i troba el que té el màxim "Sp. Atk", mostrant el nom i el valor.
+# Busca els Pokémon de tipus "Dragon" i troba el que té el màxim "Sp. Atk", mostrant el nom i el valor.
 awk -F, '$3 == "Dragon" {if($9 > max_special_atk) {max_special_atk = $9; dragon_pokemon = $2}} END {print "Dragon Pokemon with highest Sp. Atk:", dragon_pokemon, "with", max_special_atk, "Sp. Atk"}' pokemon.csv
-#Comptabilitza els Pokémon amb velocitat superior a 100 i determina el més ràpid, mostrant el nombre total i el nom del Pokémon més ràpid amb la seva velocitat.
+# Comptabilitza els Pokémon amb velocitat superior a 100 i determina el més ràpid, mostrant el nombre total i el nom del Pokémon més ràpid amb la seva velocitat.
 awk -F, 'NR > 1 && $11 > 100 {fast_count++; if($11 > max_speed) {max_speed = $11; fastest_pokemon = $2}} END{print "Number of Pokemon with Speed > 100:", fast_count; print "Fastest Pokemon:", fastest_pokemon, "with", max_speed, "Speed"}' pokemon.csv
 ### Avançats
 
-#CSV --> JSON 
+# CSV --> JSON 
 awk -F, '
 BEGIN {
     print "["
@@ -39,7 +39,7 @@ END {
     print "]"
 }' pokemon.csv > pokemon.json
 
-#ANALISIS TIPOS PROMEDIOS
+# ANALISIS TIPOS PROMEDIOS
 awk -F, '
 BEGIN {
     print "Análisis de Pokémon por tipo:"
