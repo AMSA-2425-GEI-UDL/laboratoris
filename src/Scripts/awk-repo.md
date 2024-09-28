@@ -45,18 +45,18 @@ BEGIN {
     print "Análisis de Pokémon por tipo:"
 }
 
-    # Comienza a procesar desde la segunda línea
+    #Comienza a procesar desde la segunda línea
 NR > 1 {
-    # Ignorar líneas con el tipo "Type 1" o entradas vacías
+    #Ignorar líneas con el tipo "Type 1" o entradas vacías
     if ($3 == "" || $3 == "Type 1") {
         next;
     }
 
-    # Sumar estadísticas para cada tipo
-    total[$3] += $5;   # Total de estadísticas
-    count[$3]++;       # Contador de Pokémon por tipo
+    #Sumar estadísticas para cada tipo
+    total[$3] += $5;   #Total de estadísticas
+    count[$3]++;       #Contador de Pokémon por tipo
 
-    if ($4 != "") {   # Verifica si hay un segundo tipo
+    if ($4 != "") {   #Verifica si hay un segundo tipo
         total[$4] += $5;
         count[$4]++;
     }
@@ -68,16 +68,16 @@ END {
     printf "| Tipo      | Promedio de Estadísticas Totales |\n"
     printf "+-----------+-------------------------------+\n"
 
-    # Calcula y guarda promedios por tipo
+    #Calcula y guarda promedios por tipo
     for (tipo in total) {
         promedio = total[tipo] / count[tipo];
-        promedios[tipo] = promedio;  # Guarda el promedio
+        promedios[tipo] = promedio;  #Guarda el promedio
     }
 
-    # Ordena los tipos según el promedio de estadísticas
-    n = asorti(promedios, tipos_ordenados);  # Ordena los índices de los tipos
+    #Ordena los tipos según el promedio de estadísticas
+    n = asorti(promedios, tipos_ordenados);  #Ordena los índices de los tipos
 
-    # Imprime los promedios en orden descendente
+    #Imprime los promedios en orden descendente
     for (i = n; i >= 1; i--) {
         tipo = tipos_ordenados[i];
         printf "| %-9s | %.2f                       |\n", tipo, promedios[tipo];
