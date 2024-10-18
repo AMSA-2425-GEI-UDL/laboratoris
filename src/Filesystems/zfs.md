@@ -17,6 +17,7 @@
       ```sh
       dnf dnf install kernel-devel
       ```
+      #Hi ha un dnf duplicat
 
 4. Actualitzar el sistema:
 
