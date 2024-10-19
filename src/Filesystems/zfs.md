@@ -4,7 +4,7 @@
 
       ```sh
       dnf install epel-release -y
-       ```
+      ```
 
 2. Afegeix el repositori ZFS:
 
