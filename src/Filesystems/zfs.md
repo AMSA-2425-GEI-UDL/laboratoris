@@ -15,7 +15,7 @@
 3. Instal·lació dels paquets necessaris:
 
       ```sh
-      dnf dnf install kernel-devel
+      dnf install kernel-devel
       ```
 
 4. Actualitzar el sistema:
