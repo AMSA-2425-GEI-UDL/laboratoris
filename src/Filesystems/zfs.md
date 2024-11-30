@@ -19,6 +19,7 @@ En aquesta secció, explorarem el sistema de fitxers ZFS (Zettabyte File System)
       ```sh
       dnf install kernel-devel
       ```
+      #Hi ha un dnf duplicat
 
 4. Actualitzar el sistema:
 
