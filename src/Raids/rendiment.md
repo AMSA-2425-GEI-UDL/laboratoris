@@ -60,13 +60,13 @@ apt install fio -y
 
 ## Proves de rendiment
 
-1. Test de rendiment del RAID0 en oepracions d'escriptura:
+1. Test de rendiment del RAID0 en operacions d'escriptura:
 
     ```bash
-    fio --name=write-raid1 --ioengine=libaio --iodepth=32 --rw=write \
+    fio --name=write-raid0 --ioengine=libaio --iodepth=32 --rw=write \
     --bs=4k --size=500M --numjobs=4 --runtime=120 --time_based \
-    --ramp_time=15 --group_reporting --filename=/dev/raid1 \
-    --output-format=json --output=/tmp/write-raid1.json
+    --ramp_time=15 --group_reporting --filename=/dev/raid0 \
+    --output-format=json --output=/tmp/write-raid0.json
     ```
 
 2. Test de rendiment del RAID0 en operacions de lectura:
