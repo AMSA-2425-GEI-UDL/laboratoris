@@ -6,7 +6,7 @@ En aquesta secció, explorarem el sistema de fitxers ZFS (Zettabyte File System)
 
       ```sh
       dnf install epel-release -y
-       ```
+      ```
 
 2. Afegeix el repositori ZFS:
 
