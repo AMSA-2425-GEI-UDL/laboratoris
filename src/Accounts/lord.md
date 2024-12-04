@@ -269,7 +269,7 @@ Configura el servidor SSH per permetre l'accés als usuaris Frodo, Samwise, Lego
     PubkeyAuthentication yes
     ```
 
-    > Nota: La instancia EC2 de RedHat utilitza el fitxer de configuració **/etc/ssh/sshd_config/50-cloud-init.conf** per configurar el servei SSH. Aquest fitxer s'inclou en el fitxer de configuració principal **/etc/ssh/sshd_config**.
+    > Nota: La instancia EC2 de RedHat utilitza el fitxer de configuració **/etc/ssh/sshd_config.d/50-cloud-init.conf** per configurar el servei SSH. Aquest fitxer s'inclou en el fitxer de configuració principal **/etc/ssh/sshd_config**.
 
 2. Afegeix la clau pública de l'usuari Gandalf al fitxer **~/.ssh/authorized_keys**.
 
